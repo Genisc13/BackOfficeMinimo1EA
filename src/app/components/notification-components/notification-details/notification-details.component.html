@@ -1,1 +1,28 @@
-<p>notification-details works!</p>
+<div class="container">
+    <h1 class="text-center">{{ avisoData.nameNotification }}</h1>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card my-5">
+          <div class="card-header">
+            <h2 class="text-center">Detalles de la localización</h2>
+          </div>
+          <div class="card-body">
+            <div *ngIf="avisoData">
+              <ul class="list-group">
+                <li class="list-group-item"><strong>Nombre:</strong> {{ avisoData.nameNotification }}</li>
+                <li class="list-group-item"><strong>Número:</strong> {{ avisoData.numberNotification }}</li>
+                <li class="list-group-item"><strong>Visto?</strong> {{ avisoData.seenNotification }}</li>
+                <li class="list-group-item"><strong>Descripción:</strong> {{ avisoData.descriptionNotification }}</li>
+                <li class="list-group-item"><strong>ID:</strong> {{ avisoData._id }}</li>
+                <li class="list-group-item"><strong>Fecha de creación:</strong> {{ avisoData.createdAt }}</li>
+                <li class="list-group-item"><strong>Fecha de última actualización:</strong> {{ avisoData.updatedAt }}</li>
+              </ul>
+            </div>
+            <div *ngIf="!avisoData" class="text-center mt-5">
+              <p>Cargando datos...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
