@@ -31,6 +31,10 @@ import { PublicationCreateComponent } from './components/publication-components/
 import { PublicationDetailsComponent } from './components/publication-components/publication-details/publication-details.component';
 import { PublicationEditComponent } from './components/publication-components/publication-edit/publication-edit.component';
 import { CommentResponseComponent } from './components/comment-components/comment-response/comment-response.component';
+import { NotificationComponent } from './components/notification-components/notification/notification.component';
+import { NotificationCreateComponent } from './components/notification-components/notification-create/notification-create.component';
+import { NotificationEditComponent } from './components/notification-components/notification-edit/notification-edit.component';
+import { NotificationDetailsComponent } from './components/notification-components/notification-details/notification-details.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -58,10 +62,12 @@ const routes: Routes = [
   { path:'publication',component: PublicationComponent },
   { path:'publication-create',component: PublicationCreateComponent },
   { path:'publication-details/:id',component: PublicationDetailsComponent },
-  { path:'publication-edit/:id',component: PublicationEditComponent }
-
-
-
+  { path:'publication-edit/:id',component: PublicationEditComponent },
+  
+  { path:'notification',component: NotificationComponent },
+  { path: 'notification-create', component: NotificationCreateComponent },
+  { path: 'notification-details/:id', component: NotificationDetailsComponent },
+  { path: 'notification-edit/:id', component: NotificationEditComponent }
 
 ];
 
@@ -94,6 +100,10 @@ const routes: Routes = [
     PublicationDetailsComponent,
     PublicationEditComponent,
     CommentResponseComponent,
+    NotificationComponent,
+    NotificationCreateComponent,
+    NotificationEditComponent,
+    NotificationDetailsComponent,
   ],
   imports: [
     BrowserModule,

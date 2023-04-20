@@ -1,0 +1,69 @@
+<confirmation-modal
+  [isOpen]="isModalOpen"
+  (acceptChanges)="onAcceptChanges()"
+  (cancelChanges)="onCancelChanges()"
+></confirmation-modal>
+
+<h2 class="text-center">Crear notificación</h2>
+
+<form [formGroup]="avisoForm" (ngSubmit)="onSubmit()" class="row g-3">
+  <div class="form-group">
+    <label for="nameNotification">Nombre:</label>
+    <input
+      type="string"
+      id="nameNotification"
+      formControlName="nameNotification"
+      class="form-control"
+    />
+    <div
+      *ngIf="
+      avisoForm.controls.nameNotification.invalid &&
+        (avisoForm.controls.nameNotification.dirty ||
+        avisoForm.controls.nameNotification.touched)
+      "
+    >
+      <div *ngIf="avisoForm.controls.nameNotification.errors.required">
+        Este campo es requerido.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="numberNotification">Número:</label>
+    <input
+      type="number"
+      id="numberNotification"
+      formControlName="numberNotification"
+      class="form-control"
+    />
+    <div
+      *ngIf="
+      avisoForm.controls.numberNotification.invalid &&
+        (avisoForm.controls.numberNotification.dirty ||
+        avisoForm.controls.numberNotification.touched)
+      "
+    >
+      <div *ngIf="avisoForm.controls.numberNotification.errors.required">
+        Este campo es requerido.
+      </div>
+    </div>
+  </div>
+  <div class="form-group form-check">
+    <input
+      type="checkbox"
+      class="form-check-input"
+      id="seenNotification"
+      name="seenNotification"
+    />
+    <label class="form-check-label" for="seenNotification">Visto?</label>
+  </div>
+  <div class="form-group">
+    <label for="descriptionNotification">Descripción:</label>
+    <input
+      type="string"
+      id="descriptionNotification"
+      formControlName="descriptionNotification"
+      class="form-control"
+    />
+  </div>
+  <button class="btn btn-primary" (click)="openModal()">Guardar cambios</button>
+</form>
